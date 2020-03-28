@@ -1,65 +1,36 @@
-# styled-component-generator README
+# Styled Component Generator
 
-This is the README for your extension "styled-component-generator". After writing up a brief description, we recommend including the following sections.
+Automate the creation of Components folder in React (currently only web supported).
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension adds a menu option for **folders**. (Create Styled Component)
 
-For example if there is an image subfolder under your extension project workspace:
+When clicked it asks for Component Name. If it is let empty, the parent folder will be used as component name. Otherwise, a new folder (component name) will be created inside selected folder.
 
-\!\[feature X\]\(images/feature-x.png\)
+After prompting the extension will generate two files in folder:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- index.(js|tsx)
+- styles.(js|ts)
+
+**TODO: Add Animation**
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- React Web
+- Styled Component
+- Functional Compoments usage in project
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+The generated files extensions will be created accordingly to setting `createComponent.language`. If it is set to `js` .js extensions will be used. If set to `ts` .ts(x) extensions will be used.
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+- `createComponent.language`: set to `js` or `ts` (defaults to `js`)
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+---
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- See CHANGELOG.md
