@@ -1,0 +1,71 @@
+{
+  "name": "styled-component-generator",
+  "displayName": "styled-component-generator",
+  "description": "Generate a Functional Component with styled dependency",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createComponent"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createComponent",
+        "title": "Create Styled Component"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "extension.createComponent",
+          "title": "Create Styled Component"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Styled Component generator",
+      "properties": {
+        "createComponent.language": {
+          "type": "string",
+          "default": "js",
+          "description": "Specifies whether the generated component is .js or .ts(x).",
+          "enum": [
+            "js",
+            "ts"
+          ]
+        },
+        "typescript.tsdk": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "Specifies the folder path containing the tsserver and lib*.d.ts files to use."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.43.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.0.1",
+    "typescript": "^3.7.5",
+    "vscode-test": "^1.3.0"
+  }
+}
