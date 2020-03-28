@@ -3,6 +3,8 @@
   "displayName": "styled-component-generator",
   "description": "Generate a Functional Component with styled dependency",
   "version": "0.0.1",
+  "publisher": "gmeneguz",
+  "icon": "assets/images/icon.png",
   "engines": {
     "vscode": "^1.43.0"
   },
@@ -14,12 +16,6 @@
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.createComponent",
-        "title": "Create Styled Component"
-      }
-    ],
     "menus": {
       "explorer/context": [
         {
