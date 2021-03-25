@@ -4,7 +4,8 @@ const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
 
-const indexContent = require("./templates/index");
+const indexJsContent = require("./templates/index");
+const indexTsContent = require("./templates/index_ts");
 const stylesContent = require("./templates/styles");
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -24,11 +25,11 @@ function activate(context) {
   // The commandId parameter must match the command field in package.json
   let disposable = vscode.commands.registerCommand(
     "extension.createComponent",
-    async function(args) {
+    async function (args) {
       try {
         let result = await vscode.window.showInputBox({
           ignoreFocusOut: true,
-          placeHolder: "New component name (empty to use parent)"
+          placeHolder: "New component name (empty to use parent)",
         });
         if (result === undefined) {
           return;
@@ -48,20 +49,23 @@ function activate(context) {
         let configs = vscode.workspace.getConfiguration("createComponent");
 
         let extensions;
+        let indexContent;
         switch (configs.language) {
           case "typescript":
           case "ts":
+            indexContent = indexTsContent;
             extensions = {
               index: "tsx",
-              style: "ts"
+              style: "ts",
             };
             break;
           case "js":
           case "javascript":
           default:
+            indexContent = indexJsContent;
             extensions = {
               index: "js",
-              style: "js"
+              style: "js",
             };
         }
 
@@ -71,7 +75,7 @@ function activate(context) {
           `styles.${extensions.style}`
         );
         const indexContentFormatted = indexContent.replace(
-          "__COMPONENT_NAME__",
+          /__COMPONENT_NAME__/g,
           newComponentName
         );
 
@@ -89,12 +93,11 @@ function activate(context) {
 
   context.subscriptions.push(disposable);
 }
-exports.activate = activate;
 
 // this method is called when your extension is deactivated
 function deactivate() {}
 
 module.exports = {
   activate,
-  deactivate
+  deactivate,
 };

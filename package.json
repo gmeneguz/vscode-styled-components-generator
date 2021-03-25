@@ -2,9 +2,9 @@
   "name": "styled-component-generator",
   "displayName": "styled-component-generator",
   "description": "Generate a Functional Component with styled dependency",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "gmeneguz",
-  "icon": "assets/images/icon.png",
+  "icon": "assets/images/logo.png",
   "engines": {
     "vscode": "^1.43.0"
   },
@@ -16,6 +16,12 @@
   ],
   "main": "./extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "extension.createComponent",
+        "title": "Create Styled Component"
+      }
+    ],
     "menus": {
       "explorer/context": [
         {
@@ -36,14 +42,6 @@
             "js",
             "ts"
           ]
-        },
-        "typescript.tsdk": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "default": null,
-          "description": "Specifies the folder path containing the tsserver and lib*.d.ts files to use."
         }
       }
     }
@@ -51,7 +49,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
+    "test": "node ./test/runTest.js",
+    "build": "npx vsce package --out releases/"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",

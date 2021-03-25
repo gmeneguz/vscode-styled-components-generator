@@ -1,6 +1,6 @@
 # Styled Component Generator
 
-Automate the creation of Components folder in React (currently only web supported).
+Automate the creation of Components folder in React.
 
 ## Features
 
@@ -26,6 +26,11 @@ After prompting the extension will generate two files in folder:
 The generated files extensions will be created accordingly to setting `createComponent.language`. If it is set to `js` .js extensions will be used. If set to `ts` .ts(x) extensions will be used.
 
 - `createComponent.language`: set to `js` or `ts` (defaults to `js`)
+
+## TODO
+
+- Autodected `js` or `ts` (by reading `tsconfig.json` maybe?)
+- Support React Native
 
 ## Known Issues
 

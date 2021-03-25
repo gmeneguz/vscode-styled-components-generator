@@ -12,3 +12,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Creating components with right click on folder
 - ts(x) and js support (defaults to js). Can be set with createComponent.language
+
+### 0.0.2
+
+- Add custom ts file with better layout
+
+### 0.0.3
+
+- Fix ts layout
