@@ -2,6 +2,8 @@
 
 Automate the creation of Components folder in React.
 
+The files generated are very opinionated, not much customizable yet.
+
 ## Features
 
 This extension adds a menu option for **folders**. (Create Styled Component)
